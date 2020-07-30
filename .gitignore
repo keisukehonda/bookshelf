@@ -1,0 +1,17 @@
+.idea
+**.pyc
+**.xlsx
+**/resources/*
+**/results/*
+**/datas/*
+**/node_modules/*
+**/built/*
+**/config/*
+**/log/*
+*.csv
+constant.py
+package-lock.json
+/core/data/
+run*.sh
+dump.rdb
+test.ts
