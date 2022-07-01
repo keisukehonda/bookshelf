@@ -3,8 +3,11 @@ module github.com/keisukehonda/bookshelf
 go 1.18
 
 require (
+	github.com/bufbuild/connect-go v0.1.1
 	github.com/spf13/cobra v1.5.0
 	github.com/spf13/viper v1.12.0
+	golang.org/x/net v0.0.0-20220630215102-69896b714898
+	google.golang.org/protobuf v1.28.0
 )
 
 require (
