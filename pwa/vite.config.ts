@@ -11,9 +11,9 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       injectRegister: 'auto', //ここの記述
       manifest: {
-        name: 'PWA Sample Apps',
-        short_name: 'PWAApps',
-        description: 'PWAサンプルアプリ',
+        name: 'bookshelf',
+        short_name: 'BS',
+        description: 'bookshelf app',
         theme_color: '#ffffff',
         icons: [
           {
