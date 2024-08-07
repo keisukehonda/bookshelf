@@ -12,7 +12,7 @@ export default defineConfig({
       injectRegister: 'auto',
       manifest: {
         name: 'bookshelf',
-        short_name: 'BS',
+        short_name: 'bookshelf',
         description: 'bookshelf app',
         theme_color: '#ffffff',
         icons: [
