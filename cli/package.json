@@ -10,7 +10,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@supabase/supabase-js": "^2.49.9"
+    "@supabase/supabase-js": "^2.49.9",
+    "commander": "^14.0.0",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
