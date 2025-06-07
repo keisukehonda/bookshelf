@@ -12,10 +12,13 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.49.9",
     "commander": "^14.0.0",
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.5.0",
+    "node-fetch": "^3.3.2",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
+    "@types/node-fetch": "^2.6.12",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
