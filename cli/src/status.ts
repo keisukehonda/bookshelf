@@ -1,10 +1,8 @@
 import { supabase } from "./supabase"
-import dotenv from 'dotenv'
-
-dotenv.config()
-
 
 async function main() {
+
+  const { data: all, error: err1 } = await supabase.from("books").select("isbn")
   const { data, error } = await supabase
     .from('books')
     .select('synced')
@@ -30,6 +28,7 @@ async function main() {
   }
 
   console.log('📊 登録ステータス')
+  console.log(`📚 総レコード数: ${all?.length ?? 0} 件`)
   console.log(`✅ success: ${counts.success} 件`)
   console.log(`⚠️ failed: ${counts.failed} 件`)
   console.log(`⏳ 未処理: ${counts.null} 件`)
