@@ -8,7 +8,13 @@ export default function Search() {
   const search = async () => {
     const { data, error } = await supabase
       .from('books')
-      .select('*')
+      .select(`
+        isbn,
+        title,
+        author,
+        archive_id,
+        archives(label)
+      `)
       .ilike('title', `%${keyword}%`)
 
     if (error) {
@@ -19,21 +25,28 @@ export default function Search() {
   }
 
   return (
-    <div style={{ padding: '1rem' }}>
-      <input
-        type="text"
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-        placeholder="書名を入力"
-        style={{ padding: '0.5rem', width: '60%' }}
-      />
-      <button onClick={search} style={{ marginLeft: '1rem' }}>検索</button>
+    <div className="space-y-4">
+      <div className="flex gap-2 mb-4">
+        <input
+          type="text"
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
+          placeholder="タイトルで検索"
+          className="border px-3 py-2 flex-1 rounded"
+        />
+        <button onClick={search} className="bg-blue-600 text-white px-4 py-2 rounded">
+          検索
+        </button>
+      </div>
 
       <ul>
         {results.map((book) => (
-          <li key={book.isbn}>
-            <strong>{book.title}</strong><br />
-            {book.author}
+          <li key={book.isbn} className="border p-3 rounded shadow mb-2">
+            <h2 className="font-bold text-lg">{book.title}</h2>
+            <p className="text-gray-600">{book.author}</p>
+            <p className="text-sm text-gray-500">
+              保管棚: {book.archives?.label ?? '未設定'}
+            </p>
           </li>
         ))}
       </ul>
